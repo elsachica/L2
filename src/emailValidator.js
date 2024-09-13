@@ -3,7 +3,7 @@ export class EmailValidator {
 
   validate(email){
     if (!email) {
-      return { isValid: false, error: "Email is required" }
+      return { isValid: false, error: "Email is required." }
     }
 
     // Basic email format check: ensures the email has a local part, an '@' symbol, and a domain part
