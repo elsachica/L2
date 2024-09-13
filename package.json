@@ -29,5 +29,8 @@
   "devDependencies": {
     "eslint": "^9.9.1",
     "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
   }
 }
