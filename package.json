@@ -1,0 +1,33 @@
+{
+  "name": "l2",
+  "version": "1.0.0",
+  "description": "Skapa en modul",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsachica/L2.git"
+  },
+  "keywords": [
+    "\"1DV610\"",
+    "\"assignment\"",
+    "\"JavaScript\"",
+    "\"module\""
+  ],
+  "author": "Elsa Gas Wikström",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elsachica/L2/issues"
+  },
+  "homepage": "https://github.com/elsachica/L2#readme",
+  "devDependencies": {
+    "eslint": "^9.9.1",
+    "prettier": "^3.3.3"
+  }
+}
