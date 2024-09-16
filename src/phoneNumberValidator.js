@@ -2,18 +2,18 @@ export class PhoneNumberValidator {
   constructor() {}
 
   validate(phoneNumber) {
-    // Internationellt format: + följt av landskod och nummer (utan mellanslag eller med mellanslag)
-    const internationalPhoneRegex = /^\+?\d{1,3}\s?\d{1,14}(\s?\d{1,13})?$/
+    // Svenskt format: börjar med +46 eller 0, följt av 9 siffror (kan ha mellanslag)
+    const swePhoneRegex = /^(?:\+46|0)\d{9}$/
 
-    // Lokalt format: 10 siffror
-    const localPhoneRegex = /^\d{10}$/
+    // Amerikanskt format: 10 siffror eller 11 siffror med landskod (+1
+    const usPhoneRegex = /^(?:\+1\s?)?\d{10}$/
 
-    if (internationalPhoneRegex.test(phoneNumber)) {
-      return { isValid: true, format: 'International' }
-    } else if (localPhoneRegex.test(phoneNumber)){
-      return { isValid: true, format: 'Local'}
+    if (swePhoneRegex.test(phoneNumber)) {
+      return { isValid: true, format: 'Swedish' }
+    } else if (usPhoneRegex.test(phoneNumber)) {
+      return { isValid: true, format: 'US' }
     } else {
-      return { isValid: false, message: 'Not a valid phone number'}
+      return { isValid: false, message: 'Not a valid phone number' }
     }
   }
 }

@@ -14,12 +14,15 @@ const phoneNumberValidator = new PhoneNumberValidator
 // console.log(emailValidator.validate('examplegmail.com'))
 
 // PostalCodeValidator
-// console.log(postalCodeValidator.validate('12345')) // USA
-// console.log(postalCodeValidator.validate('12345-6789')) // USA
-// console.log(postalCodeValidator.validate('123 45')) // Sweden
-// console.log(postalCodeValidator.validate('1234')) // false
+// console.log(postalCodeValidator.validate('12345'))
+// console.log(postalCodeValidator.validate('12345-6789'))
+// console.log(postalCodeValidator.validate('123 45'))
+// console.log(postalCodeValidator.validate('1234'))
 
-console.log(phoneNumberValidator.validate('0763967890'))
-console.log(phoneNumberValidator.validate('+46763967890'))
+// PhoneNumberValidator
+console.log(phoneNumberValidator.validate('0701234567'))
+console.log(phoneNumberValidator.validate('+46701234567'))
+console.log(phoneNumberValidator.validate('+1 1234567890'))
+console.log(phoneNumberValidator.validate('1234567890'))
 console.log(phoneNumberValidator.validate('890'))
 console.log(phoneNumberValidator.validate(''))
