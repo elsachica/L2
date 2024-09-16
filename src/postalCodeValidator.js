@@ -18,13 +18,3 @@ export class PostalCodeValidator {
     }
   }
 }
-
-
-let temperature = 25;
-
-if (temperature > 20) {
-  console.log("Det är varmt ute!");  // Om temperaturen är större än 20, kör denna kod
-} else {
-  console.log("Det är kallt ute!");  // Annars, kör denna kod
-}
-
