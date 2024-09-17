@@ -1,7 +1,7 @@
 export class PasswordValidator {
   constructor() {}
 
-  validate(password) {
+  validatePassword(password) {
     const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
     
     if (passwordRegex.test(password)) {

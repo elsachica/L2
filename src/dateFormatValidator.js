@@ -1,7 +1,7 @@
 export class DateFormatValidator {
   constructor() {}
 
-  validate(dateFormat){
+  validateDateFormat(dateFormat){
     const yyyyMmDdRegex = /^\d{4}-\d{2}-\d{2}$/; // För YYYY-MM-DD
     const ddMmYyyyRegex = /^\d{2}\/\d{2}\/\d{4}$/; // För DD/MM/YYYY
 

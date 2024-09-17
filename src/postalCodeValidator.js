@@ -1,7 +1,7 @@
 export class PostalCodeValidator {
   constructor() {}
 
-  validate(postalCode) {
+  validatePostalCode(postalCode) {
     // US-format: 5 siffror eller 5 siffror följt av bindestreck och 4 siffror
     const usPostalCodeRegex = /^\d{5}(-\d{4})?$/
 

@@ -1,7 +1,7 @@
 export class EmailValidator {
   constructor() {}
 
-  validate(email){
+  validateEmail(email){
     if (!email) {
       return { isValid: false, error: "Email is required." }
     }

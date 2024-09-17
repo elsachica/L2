@@ -1,7 +1,7 @@
 export class PhoneNumberValidator {
   constructor() {}
 
-  validate(phoneNumber) {
+  validatePhoneNumber(phoneNumber) {
     // Svenskt format: börjar med +46 eller 0, följt av 9 siffror (kan ha mellanslag)
     const swePhoneRegex = /^(?:\+46|0)\d{9}$/
 
