@@ -82,4 +82,3 @@ Install all dependencies by running `npm install` as mentioned above.
 - `npm test`: Runs all test cases using Jest.
 - `npm run lint`: Analyzes the code using ESLint to find code style issues.
 - `npm run lint:fix`: Automatically fixes any code style issues found by ESLint.
-
