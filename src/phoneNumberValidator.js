@@ -20,14 +20,14 @@ export class PhoneNumberValidator {
       const usPhoneRegex = /^(?:\+1\s?)?\d{10}$/
 
       if (swePhoneRegex.test(phoneNumber)) {
-        return { isValid: true, format: 'Swedish' }
+        return { isValid: true, format: "Swedish" }
       } else if (usPhoneRegex.test(phoneNumber)) {
-        return { isValid: true, format: 'US' }
+        return { isValid: true, format: "US" }
       } else {
-        return { isValid: false, error: 'Not a valid phone number' }
+        return { isValid: false, error: "Not a valid phone number" }
       }
     } catch (error) {
-      return { isValid: false, error: 'An unexpected error occurred.' }
+      return { isValid: false, error: "An unexpected error occurred." }
     }
   }
 }

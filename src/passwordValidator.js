@@ -21,10 +21,10 @@ export class PasswordValidator {
       if (passwordRegex.test(password)) {
         return { isValid: true }
       } else {
-        return { isValid: false, message: 'Password must be between 6 and 16 characters long, and include at least one letter, one digit, and one special character.' }
+        return { isValid: false, message: "Password must be between 6 and 16 characters long, and include at least one letter, one digit, and one special character." }
       }
     } catch (error) {
-      return { isValid: false, error: 'An unexpected error occurred.' }
+      return { isValid: false, error: "An unexpected error occurred." }
     }
   }
 }

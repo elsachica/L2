@@ -38,28 +38,28 @@ export class PostalCodeValidator {
       const nldPostalCodeRegex = /^\d{4} ?[A-Za-z]{2}$/
 
       if (usPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'USA' }
+        return { isValid: true, country: "USA" }
       } else if (swePostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'Sweden' }
+        return { isValid: true, country: "Sweden" }
       } else if (canPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'Canada' }
+        return { isValid: true, country: "Canada" }
       } else if (ukPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'UK' }
+        return { isValid: true, country: "UK" }
       } else if (gerPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'Germany' }
+        return { isValid: true, country: "Germany" }
       } else if (fraPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'France' }
+        return { isValid: true, country: "France" }
       } else if (itaPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'Italy' }
+        return { isValid: true, country: "Italy" }
       } else if (espPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'Spain' }
+        return { isValid: true, country: "Spain" }
       } else if (nldPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: 'Netherlands' }
+        return { isValid: true, country: "Netherlands" }
       } else {
-        return { isValid: false, error: 'Not a valid postal code.' }
+        return { isValid: false, error: "Not a valid postal code." }
       }
     } catch (error) {
-      return { isValid: false, error: 'An unexpected error occurred.' }
+      return { isValid: false, error: "An unexpected error occurred." }
     }
   }
 }

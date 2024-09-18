@@ -9,8 +9,8 @@
  * - DateFormatValidator: Validates date formats.
  */
 
-export { EmailValidator } from './emailValidator.js'
-export { PostalCodeValidator } from './postalCodeValidator.js'
-export { PhoneNumberValidator } from './phoneNumberValidator.js'
-export { PasswordValidator } from './passwordValidator.js'
-export { DateFormatValidator } from './dateFormatValidator.js'
+export { EmailValidator } from "./emailValidator.js"
+export { PostalCodeValidator } from "./postalCodeValidator.js"
+export { PhoneNumberValidator } from "./phoneNumberValidator.js"
+export { PasswordValidator } from "./passwordValidator.js"
+export { DateFormatValidator } from "./dateFormatValidator.js"

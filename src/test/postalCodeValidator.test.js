@@ -1,34 +1,111 @@
-import { PostalCodeValidator } from "../postalCodeValidator";
+import { PostalCodeValidator } from "../postalCodeValidator"
 
-describe('PostalCodevalidator Tests', () => {
+/**
+ * Tests for the PostalCodeValidator class.
+ */
+describe("PostalCodeValidator Tests", () => {
   let postalCodeValidator
 
+  /**
+   * Initializes the PostalCodeValidator instance before all tests.
+   */
   beforeAll(() => {
     postalCodeValidator = new PostalCodeValidator()
   })
 
-  test('returns valid for a correct US postal Code', async () => {
-    const result = await postalCodeValidator.validatePostalCode('12345')
-    expect(result).toEqual({ isValid: true, country: 'USA' })
+  /**
+   * Tests if a valid US postal code is correctly validated.
+   */
+  test("returns valid for a correct US postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("12345")
+    expect(result).toEqual({ isValid: true, country: "USA" })
   })
 
-  test('returns valid for a correct US postal code with hyphen', async () => {
-    const result = await postalCodeValidator.validatePostalCode('12345-6789')
-    expect(result).toEqual({ isValid: true, country: 'USA' })
+  /**
+   * Tests if a valid US postal code with a hyphen is correctly validated.
+   */
+  test("returns valid for a correct US postal code with hyphen", async () => {
+    const result = await postalCodeValidator.validatePostalCode("12345-6789")
+    expect(result).toEqual({ isValid: true, country: "USA" })
   })
 
-  test('valid Swedish postal code with space', async () => {
-    const result = await postalCodeValidator.validatePostalCode('123 45')
-    expect(result).toEqual({ isValid: true, country: 'Sweden' })
+  /**
+   * Tests if a valid Swedish postal code with a space is correctly validated.
+   */
+  test("valid Swedish postal code with space", async () => {
+    const result = await postalCodeValidator.validatePostalCode("123 45")
+    expect(result).toEqual({ isValid: true, country: "Sweden" })
   })
 
-  test('returns an error for an invalid postal code', async () => {
-    const result = await postalCodeValidator.validatePostalCode('1234')
-    expect(result).toEqual({ isValid: false, message: 'Not a valid postal code.' })
+  /**
+   * Tests if a valid Canadian postal code is correctly validated.
+   */
+  test("returns valid for a correct Canadian postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("K1A 0B1")
+    expect(result).toEqual({ isValid: true, country: "Canada" })
   })
 
-  test('returns an error for an empty postal code', async () => {
-    const result = await postalCodeValidator.validatePostalCode('')
-    expect(result).toEqual({ isValid: false, message: 'Not a valid postal code.'})
+  /**
+   * Tests if a valid UK postal code is correctly validated.
+   */
+  test("returns valid for a correct UK postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("W1A 1AA")
+    expect(result).toEqual({ isValid: true, country: "UK" })
+  })
+
+  /**
+   * Tests if a valid German postal code is correctly validated.
+   */
+  test("returns valid for a correct German postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("12345")
+    expect(result).toEqual({ isValid: true, country: "Germany" })
+  })
+
+  /**
+   * Tests if a valid French postal code is correctly validated.
+   */
+  test("returns valid for a correct French postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("75008")
+    expect(result).toEqual({ isValid: true, country: "France" })
+  })
+
+  /**
+   * Tests if a valid Italian postal code is correctly validated.
+   */
+  test("returns valid for a correct Italian postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("00100")
+    expect(result).toEqual({ isValid: true, country: "Italy" })
+  })
+
+  /**
+   * Tests if a valid Spanish postal code is correctly validated.
+   */
+  test("returns valid for a correct Spanish postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("28001")
+    expect(result).toEqual({ isValid: true, country: "Spain" })
+  })
+
+  /**
+   * Tests if a valid Dutch postal code is correctly validated.
+   */
+  test("returns valid for a correct Dutch postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("1234 AB")
+    expect(result).toEqual({ isValid: true, country: "Netherlands" })
+  })
+
+  /**
+   * Tests if an invalid postal code returns an error.
+   */
+  test("returns an error for an invalid postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("1234")
+    expect(result).toEqual({ isValid: false, error: "Not a valid postal code." })
+  })
+
+  /**
+   * Tests if an empty postal code returns an error.
+   */
+  test("returns an error for an empty postal code", async () => {
+    const result = await postalCodeValidator.validatePostalCode("")
+    expect(result).toEqual({ isValid: false, error: "Postal code is required." })
   })
 })

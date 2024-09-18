@@ -38,7 +38,7 @@ export class EmailValidator {
 
       return { isValid: true }
     } catch (error) {
-      return { isValid: false, error: 'An unexpected error occurred.' }
+      return { isValid: false, error: "An unexpected error occurred." }
     }
   }
 }

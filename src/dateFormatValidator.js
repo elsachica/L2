@@ -22,14 +22,14 @@ export class DateFormatValidator {
       const ddMmYyyyRegex = /^\d{2}\/\d{2}\/\d{4}$/
 
       if (yyyyMmDdRegex.test(dateFormat)) {
-        return { isValid: true, format: 'YYYY-MM-DD' }
+        return { isValid: true, format: "YYYY-MM-DD" }
       } else if (ddMmYyyyRegex.test(dateFormat)) {
-        return { isValid: true, format: 'DD/MM/YYYY' }
+        return { isValid: true, format: "DD/MM/YYYY" }
       } else {
-        return { isValid: false, message: 'Not a valid date format. Expected formats: YYYY-MM-DD or DD/MM/YYYY.' }
+        return { isValid: false, message: "Not a valid date format. Expected formats: YYYY-MM-DD or DD/MM/YYYY." }
       }
     } catch (error) {
-      return { isValid: false, error: 'An unexpected error occurred.' }
+      return { isValid: false, error: "An unexpected error occurred." }
     }
   }
 }
