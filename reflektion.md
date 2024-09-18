@@ -18,8 +18,8 @@
 ### Reflektion och Regler
 
 1. **Intention-Revealing Names:** Jag tycker att jag har gjort ett bra jobb med att namnge klasser och metoder på ett sätt som tydligt beskriver deras syfte. Klassnamnen som PostalCodeValidator, PhoneNumberValidator, PasswordValidator, EmailValidator och DateFormatValidator är bra exempel på intention-revealing names.
-2. **Use Problem Domain Names:** Namnen på mina klasser är tydligt relaterade till problemområdet, vilket gör koden lätt att förstå för någon med relevant domänkunskap. Dock kan metodnamnen vara mer specifika för att ge ytterligare kontext.
-3. **Method Names:** Metodnamnen är generellt bra men kan förbättras genom att vara mer specifika och kontextuella. Till exempel, istället för validatePostalCode(), skulle ett namn som validateUSAndSwePostalCode() kunna ge en tydligare bild av vad som valideras.
+2. **Use Problem Domain Names:** Namnen på mina klasser är tydligt relaterade till problemområdet, vilket gör koden lätt att förstå för någon med relevant domänkunskap.
+3. **Method Names:** Metodnamnen är generellt bra men kan förbättras genom att vara mer specifika och kontextuella. Till exempel, istället för validatePostalCode(), skulle ett namn som validateUSAndSwePostalCode() kunna ge en tydligare bild av vad som valideras. Jag har valt att inte döpa metoden till den, utifall att någon vill lägga till fler saker till metoden.
 4. **Avoid Disinformation:** Inga av mina namn verkar vara vilseledande eller ge fel information. De är direkta och relevanta för det de representerar.
 5. **Use Pronounceable Names:** Alla mina namn är lätta att uttala och förstå, vilket underlättar för kommunikation och samarbete.
 

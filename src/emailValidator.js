@@ -1,6 +1,4 @@
 export class EmailValidator {
-  constructor() {}
-
   validateEmail(email){
     if (!email) {
       return { isValid: false, error: "Email is required." }
@@ -27,6 +25,6 @@ export class EmailValidator {
       return { isValid: false, error: "Email domain is not valid."}
     }
 
-    return { isValid: true, error: null }
+    return { isValid: true }
   }
 }
