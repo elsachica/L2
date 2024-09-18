@@ -1,9 +1,10 @@
 export class PostalCodeValidator {
   validatePostalCode(postalCode) {
-    // US-format: 5 siffror eller 5 siffror följt av bindestreck och 4 siffror
+    if(!postalCode) {
+      return { isValid: false, error: "Postal code is required." }
+    }
     const usPostalCodeRegex = /^\d{5}(-\d{4})?$/
 
-    // Svenskt format: 5 siffror med mellanslag
     const swePostalCodeRegex = /^\d{3} \d{2}$/
 
 

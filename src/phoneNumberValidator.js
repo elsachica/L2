@@ -1,9 +1,10 @@
 export class PhoneNumberValidator {
   validatePhoneNumber(phoneNumber) {
-    // Svenskt format: börjar med +46 eller 0, följt av 9 siffror (kan ha mellanslag)
+    if(!phoneNumber) {
+      return { isValid: false, error: "Phone number is requiered." }
+    }
     const swePhoneRegex = /^(?:\+46|0)\d{9}$/
 
-    // Amerikanskt format: 10 siffror eller 11 siffror med landskod (+1
     const usPhoneRegex = /^(?:\+1\s?)?\d{10}$/
 
     if (swePhoneRegex.test(phoneNumber)) {

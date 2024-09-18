@@ -1,5 +1,8 @@
 export class PasswordValidator {
   validatePassword(password) {
+    if(!password) {
+      return { isValid: false, error: "Password is required." }
+    }
     const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
     
     if (passwordRegex.test(password)) {
