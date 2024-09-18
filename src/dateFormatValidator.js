@@ -1,4 +1,5 @@
 /**
+ * Class repr/**
  * Class representing a date format validator.
  */
 export class DateFormatValidator {
@@ -12,19 +13,23 @@ export class DateFormatValidator {
    * @returns {string} [return.message] - The message explaining why the date format is invalid.
    */
   validateDateFormat(dateFormat) {
-    if (!dateFormat) {
-      return { isValid: false, error: "Date is required." }
-    }
+    try {
+      if (!dateFormat) {
+        return { isValid: false, error: "Date is required." }
+      }
 
-    const yyyyMmDdRegex = /^\d{4}-\d{2}-\d{2}$/
-    const ddMmYyyyRegex = /^\d{2}\/\d{2}\/\d{4}$/
+      const yyyyMmDdRegex = /^\d{4}-\d{2}-\d{2}$/
+      const ddMmYyyyRegex = /^\d{2}\/\d{2}\/\d{4}$/
 
-    if (yyyyMmDdRegex.test(dateFormat)) {
-      return { isValid: true, format: 'YYYY-MM-DD' }
-    } else if (ddMmYyyyRegex.test(dateFormat)) {
-      return { isValid: true, format: 'DD/MM/YYYY' }
-    } else {
-      return { isValid: false, message: 'Not a valid date format. Expected formats: YYYY-MM-DD or DD/MM/YYYY.' }
+      if (yyyyMmDdRegex.test(dateFormat)) {
+        return { isValid: true, format: 'YYYY-MM-DD' }
+      } else if (ddMmYyyyRegex.test(dateFormat)) {
+        return { isValid: true, format: 'DD/MM/YYYY' }
+      } else {
+        return { isValid: false, message: 'Not a valid date format. Expected formats: YYYY-MM-DD or DD/MM/YYYY.' }
+      }
+    } catch (error) {
+      return { isValid: false, error: 'An unexpected error occurred.' }
     }
   }
 }
