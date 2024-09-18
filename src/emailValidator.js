@@ -36,7 +36,7 @@ export class EmailValidator {
         return { isValid: false, error: "Email domain is not valid." }
       }
 
-      return { isValid: true }
+      return { isValid: true, error: null }
     } catch (error) {
       return { isValid: false, error: "An unexpected error occurred." }
     }
