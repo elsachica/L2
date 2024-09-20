@@ -11,23 +11,25 @@ export class PhoneNumberValidator {
    * @returns {string} [return.format] - The format of the valid phone number.
    */
   validatePhoneNumber(phoneNumber) {
-    try {
-      if (!phoneNumber) {
-        return { isValid: false, error: "Phone number is required." }
-      }
+    if (!phoneNumber) {
+      return { isValid: false, error: "Phone number is required." }
+    }
 
-      const swePhoneRegex = /^(?:\+46|0)\d{9}$/
-      const usPhoneRegex = /^(?:\+1\s?)?\d{10}$/
+    const swePhoneRegex = /^(?:\+46|0)\d{9}$/
+    const usPhoneRegex = /^(?:\+1\s?)?\d{10}$/
+    const ukPhoneRegex = /^(?:\+44|0)\d{10}$/
+    const canPhoneRegex = /^(?:\+1\s?)?(\d{3})(\d{3})(\d{4})$/
 
-      if (swePhoneRegex.test(phoneNumber)) {
-        return { isValid: true, format: "Swedish" }
-      } else if (usPhoneRegex.test(phoneNumber)) {
-        return { isValid: true, format: "US" }
-      } else {
-        return { isValid: false, error: "Not a valid phone number" }
-      }
-    } catch (error) {
-      return { isValid: false, error: "An unexpected error occurred." }
+    if (swePhoneRegex.test(phoneNumber)) {
+      return { isValid: true, format: "Swedish" }
+    } else if (ukPhoneRegex.test(phoneNumber)) {
+      return { isValid: true, format: "UK" }
+    } else if (canPhoneRegex.test(phoneNumber)) {
+      return { isValid: true, format: "Canada" }
+    } else if (usPhoneRegex.test(phoneNumber)) {
+      return { isValid: true, format: "US" }
+    } else {
+      return { isValid: false, error: "Not a valid phone number" }
     }
   }
 }
