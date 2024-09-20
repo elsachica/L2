@@ -11,29 +11,25 @@ export class PostalCodeValidator {
    * @returns {string} [return.country] - The country of the valid postal code.
    */
   validatePostalCode(postalCode) {
-    try {
-      if (!postalCode) {
-        return { isValid: false, error: "Postal code is required." }
-      }
+    if (!postalCode) {
+      return { isValid: false, error: "Postal code is required." }
+    }
 
-      const usPostalCodeRegex = /^\d{5}(-\d{4})?$/
-      const swePostalCodeRegex = /^\d{3} \d{2}$/
-      const canPostalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/
-      const ukPostalCodeRegex = /^[A-Za-z]{1,2}\d{1,2}[A-Za-z]?\s?\d[A-Za-z]{2}$/
+    const usPostalCodeRegex = /^\d{5}(-\d{4})?$/
+    const swePostalCodeRegex = /^\d{3} \d{2}$/
+    const canPostalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/
+    const ukPostalCodeRegex = /^[A-Za-z]{1,2}\d{1,2}[A-Za-z]?\s?\d[A-Za-z]{2}$/
 
-      if (usPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: "USA" }
-      } else if (swePostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: "Sweden" }
-      } else if (canPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: "Canada" }
-      } else if (ukPostalCodeRegex.test(postalCode)) {
-        return { isValid: true, country: "UK" }
-      } else {
-        return { isValid: false, error: "Not a valid postal code." }
-      }
-    } catch (error) {
-      return { isValid: false, error: "An unexpected error occurred." }
+    if (usPostalCodeRegex.test(postalCode)) {
+      return { isValid: true, country: "USA" }
+    } else if (swePostalCodeRegex.test(postalCode)) {
+      return { isValid: true, country: "Sweden" }
+    } else if (canPostalCodeRegex.test(postalCode)) {
+      return { isValid: true, country: "Canada" }
+    } else if (ukPostalCodeRegex.test(postalCode)) {
+      return { isValid: true, country: "UK" }
+    } else {
+      return { isValid: false, error: "Not a valid postal code." }
     }
   }
 }
