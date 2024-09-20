@@ -11,20 +11,16 @@ export class PasswordValidator {
    * @returns {string} [return.message] - The message explaining why the password is invalid.
    */
   validatePassword(password) {
-    try {
-      if (!password) {
-        return { isValid: false, error: "Password is required." }
-      }
+    if (!password) {
+      return { isValid: false, error: "Password is required." }
+    }
 
-      const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
 
-      if (passwordRegex.test(password)) {
-        return { isValid: true }
-      } else {
-        return { isValid: false, message: "Password must be between 6 and 16 characters long, and include at least one letter, one digit, and one special character." }
-      }
-    } catch (error) {
-      return { isValid: false, error: "An unexpected error occurred." }
+    if (passwordRegex.test(password)) {
+      return { isValid: true }
+    } else {
+      return { isValid: false, message: "Password must be between 6 and 16 characters long, and include at least one letter, one digit, and one special character." }
     }
   }
 }
