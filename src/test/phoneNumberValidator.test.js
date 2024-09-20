@@ -66,6 +66,6 @@ describe("PhoneNumberValidator Tests", () => {
    */
   test("returns invalid for an empty phone number", async () => {
     const result = await phoneNumberValidator.validatePhoneNumber("")
-    expect(result).toEqual({ isValid: false, error: "Phone number is required." })
+    expect(result).toEqual({ isValid: false, error: "Not a valid phone number" })
   })
 })
