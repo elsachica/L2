@@ -1,7 +1,7 @@
 /**
  * Class representing a username validator.
  */
-export class UsernameValidator {
+export class UserNameValidator {
   /**
    * Validates a username.
    * @param {string} username - The username to validate.

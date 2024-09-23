@@ -18,18 +18,18 @@ export class PhoneNumberValidator {
     const swePhoneRegex = /^(?:\+46|0)\d{9}$/
     const usPhoneRegex = /^(?:\+1\s?)?\d{10}$/
     const ukPhoneRegex = /^(?:\+44|0)\d{10}$/
-    const canPhoneRegex = /^(?:\+1\s?)?(\d{3})(\d{3})(\d{4})$/
+    const espPhoneRegex = /^(?:\+34\s?|0)?[67]\d{8}$/
 
     if (swePhoneRegex.test(phoneNumber)) {
       return { isValid: true, format: "Swedish" }
     } else if (ukPhoneRegex.test(phoneNumber)) {
       return { isValid: true, format: "UK" }
-    } else if (canPhoneRegex.test(phoneNumber)) {
-      return { isValid: true, format: "Canada" }
     } else if (usPhoneRegex.test(phoneNumber)) {
       return { isValid: true, format: "US" }
+    } else if (espPhoneRegex.test(phoneNumber)) {
+      return { isValid: true, format: "Spain" }
     } else {
-      return { isValid: false, error: "Not a valid phone number" }
+      return { isValid: false, error: "Not a valid phone number." }
     }
   }
 }
