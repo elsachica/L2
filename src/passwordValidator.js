@@ -40,6 +40,7 @@ export class PasswordValidator {
     if (!noSpaceRegex.test(password)) {
       return { isValid: false, message: "Password must not contain spaces." }
     }
+    
     return { isValid: true }
   }
 }
