@@ -15,12 +15,31 @@ export class PasswordValidator {
       return { isValid: false, error: "Password is required." }
     }
 
-    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+    const lengthRegex = /^.{6,16}$/
+    const digitRegex = /[0-9]/
+    const specialCharRegex = /[!@#$%^&*]/
+    const upperCaseRegex = /[A-Z]/
+    const lowerCaseRegex = /[a-z]/
+    const noSpaceRegex = /^\S*$/
 
-    if (passwordRegex.test(password)) {
-      return { isValid: true }
-    } else {
-      return { isValid: false, message: "Password must be between 6 and 16 characters long, and include at least one letter, one digit, and one special character." }
+    if (!lengthRegex.test(password)) {
+      return { isValid: false, message: "Password must be between 6 and 16 characters long." }
     }
+    if (!digitRegex.test(password)) {
+      return { isValid: false, message: "Password must include at least one digit." }
+    }
+    if (!specialCharRegex.test(password)) {
+      return { isValid: false, message: "Password must include at least one special character." }
+    }
+    if (!upperCaseRegex.test(password)) {
+      return { isValid: false, message: "Password must include at least one uppercase letter." }
+    }
+    if (!lowerCaseRegex.test(password)) {
+      return { isValid: false, message: "Password must include at least one lowercase letter." }
+    }
+    if (!noSpaceRegex.test(password)) {
+      return { isValid: false, message: "Password must not contain spaces." }
+    }
+    return { isValid: true }
   }
 }
