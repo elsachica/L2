@@ -14,27 +14,28 @@ export class EmailValidator {
       return { isValid: false, error: "Email is required." }
     }
 
-    // Basic email format check: ensures the email has a local part, an '@' symbol, and a domain part
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-    // Check for forbidden characters: forbids spaces, special characters like !, #, $, %, ^, &, *, (, ), +, =, [, ], {, }, ;, :, ', ", /, \, |, ~, `
     const forbiddenCharsRegex = /[^\w@.-]/
-
-    // Check for valid domain format: ensures the domain part has at least two alphabetic characters after the last dot
     const domainRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/
+    const maxLength = 254
+    const maxLocalLength = 64
 
     if (forbiddenCharsRegex.test(email)) {
       return { isValid: false, error: "Email contains forbidden characters." }
     }
-
     if (!emailRegex.test(email)) {
       return { isValid: false, error: "Email is not valid." }
     }
-
     if (!domainRegex.test(email)) {
       return { isValid: false, error: "Email domain is not valid." }
     }
-
+    if (email.length > maxLength) {
+      return { isValid: false, error: "Email is too long." }
+    }
+    const [localPart, domainPart] = email.split("@")
+    if (localPart.length > maxLocalLength) {
+      return { isValid: false, error: "Local part of the email is too long." }
+    }
     return { isValid: true, error: null }
   }
 }
