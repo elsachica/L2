@@ -3,7 +3,7 @@
 
 ## Description
 
-This project is a JavaScript module that contains various validators for checking the format of email addresses, postal codes, phone numbers, passwords, and date formats. The module can be used to validate user data in other applications.
+This project is a JavaScript module that contains various validators for checking the format of email addresses, postal codes, phone numbers, passwords, user names, and date formats. The module can be used to validate user data in other applications.
 
 ## Installation
 
@@ -47,6 +47,7 @@ The project includes five main classes, each for a specific type of validation:
 - **PhoneNumberValidator**: Validates both Swedish and US phone numbers.
 - **PasswordValidator**: Checks that passwords meet length, character, number, and special character requirements.
 - **DateFormatValidator**: Validates two date formats: YYYY-MM-DD and DD/MM/YYYY.
+- **UserNameValidator**: Validates usernames to ensure they are 3 to 16 characters long and contain only letters, numbers, and underscores.
 
 ## Test Cases
 
@@ -59,6 +60,8 @@ Examples of test cases:
 - **PhoneNumberValidator**: Tests phone numbers for both Swedish and US formats.
 - **PasswordValidator**: Ensures that passwords meet the required length and character rules.
 - **DateFormatValidator**: Tests if the date formats YYYY-MM-DD and DD/MM/YYYY are valid.
+- **UserNameValidator**: Ensures that usernames are 3 to 16 characters long and contain only letters, numbers, and underscores.
+
 
 To run the tests, use the command:
 ```bash
