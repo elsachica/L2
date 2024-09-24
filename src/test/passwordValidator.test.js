@@ -1,4 +1,4 @@
-import { PasswordValidator } from "../passwordValidator"
+import { PasswordValidator } from "../validators/passwordValidator.js"
 
 /**
  * Tests for the PasswordValidator class.

@@ -1,4 +1,4 @@
-import { DateFormatValidator } from "../dateFormatValidator"
+import { DateFormatValidator } from "../validators/date/dateFormatValidator"
 
 /**
  * Tests for the DateFormatValidator class.

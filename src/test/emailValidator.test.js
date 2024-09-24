@@ -1,4 +1,4 @@
-import { EmailValidator } from "../emailValidator"
+import { EmailValidator } from "../validators/emailValidator.js"
 
 /**
  * Tests for the EmailValidator class.

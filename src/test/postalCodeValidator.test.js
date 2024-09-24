@@ -1,4 +1,4 @@
-import { PostalCodeValidator } from "../postalCodeValidator"
+import { PostalCodeValidator } from "../validators/postalCodeValidator.js"
 
 /**
  * Tests for the PostalCodeValidator class.

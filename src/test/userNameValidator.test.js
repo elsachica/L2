@@ -1,4 +1,4 @@
-import { UserNameValidator } from "../userNameValidator"
+import { UserNameValidator } from "../validators/userNameValidator.js"
 
 /**
  * Tests for the UserNameValidator class.
