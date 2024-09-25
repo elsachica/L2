@@ -14,11 +14,11 @@ export class EmailValidator {
       return { isValid: false, error: "Email is required." }
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    const forbiddenCharsRegex = /[^\w@.-]/
-    const domainRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/
-    const maxLength = 254
-    const maxLocalLength = 64
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ // Matches a basic email format
+    const forbiddenCharsRegex = /[^\w@.-]/ // Forbidden special characters !#$%^&*()=+[]\';,/{}|":<>?~
+    const domainRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/ // Domain format meaning it has at least 2 characters
+    const maxLength = 254 // Maximum length of an email address
+    const maxLocalLength = 64 // Maximum length of the local part of the email address
 
     if (forbiddenCharsRegex.test(email)) {
       return { isValid: false, error: "Email contains forbidden characters." }
