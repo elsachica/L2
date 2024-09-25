@@ -14,10 +14,10 @@ export class StreetValidator {
       return { isValid: false, error: "Street name is required." }
     }
 
-    const streetRegex = /^[A-Za-zåäöÅÄÖ\s]+$/ // Only letters and spaces allowed
+    const streetRegex = /^[A-Za-zåäöÅÄÖ\s\d]+[A-Za-zåäöÅÄÖ\s\d]*$/ // Letters, spaces, and numbers allowed
 
     if (!streetRegex.test(street)) {
-      return { isValid: false, error: "Street name can only contain letters and spaces." }
+      return { isValid: false, error: "Street name can only contain letters, numbers, and spaces." }
     }
 
     return { isValid: true }
