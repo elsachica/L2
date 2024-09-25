@@ -16,8 +16,8 @@ export class DateFormatValidator {
       return { isValid: false, error: "Date is required." }
     }
 
-    const yyyyMmDdRegex = /^\d{4}-\d{2}-\d{2}$/
-    const ddMmYyyyRegex = /^\d{2}\/\d{2}\/\d{4}$/
+    const yyyyMmDdRegex = /^\d{4}-\d{2}-\d{2}$/ // Matches a date format in the form of YYYY-MM-DD
+    const ddMmYyyyRegex = /^\d{2}\/\d{2}\/\d{4}$/ // Matches a date format in the form of DD/MM/YYYY
 
     if (yyyyMmDdRegex.test(dateFormat)) {
       return { isValid: true, format: "YYYY-MM-DD" }
