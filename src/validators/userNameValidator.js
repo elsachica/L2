@@ -15,10 +15,10 @@ export class UserNameValidator {
       return { isValid: false, error: "Username is required." }
     }
 
-    const lengthRegex = /^.{3,16}$/
-    const noSpaceRegex = /^\S*$/
-    const forbiddenCharsRegex = /[!@#$%^&*(),.?":{}|<>]/
-    const forbiddenWords = ["admin", "root", "superuser"]
+    const lengthRegex = /^.{3,16}$/ // Forbidden to be shorter than 3 characters and longer than 16 characters
+    const noSpaceRegex = /^\S*$/ // Forbidden to contain spaces
+    const forbiddenCharsRegex = /[!@#$%^&*(),.?":{}|<>]/ // Forbidden special characters !@#$%^&*(),.?":{}|
+    const forbiddenWords = ["admin", "root", "superuser"] // User name cannot contain these words
 
     if (!lengthRegex.test(userName)) {
       return { isValid: false, message: "Username must be between 3 and 16 characters long." }
