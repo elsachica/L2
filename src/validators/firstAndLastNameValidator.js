@@ -8,9 +8,13 @@ export class FirstAndLastNameValidator {
    * @returns {string} [return.error] - The error message if validation fails.
    */
   validateFirstAndLastName(firstName, lastName) {
-    const nameRegex = /^[A-Za-zåäöÅÄÖ]+$/
-    const minLength = 1
-    const maxLength = 50
+    if (!firstName || !lastName) {
+      return { isValid: false, error: "First name and last name are required." }
+    }
+
+    const nameRegex = /^[A-Za-zåäöÅÄÖ]+$/ // Only letters allowed
+    const minLength = 1 // Minimum length of the name
+    const maxLength = 50 // Maximum length of the name
 
     if (!firstName || firstName.length < minLength || firstName.length > maxLength) {
       return { isValid: false, error: "First name must be between 1 and 50 characters." }
