@@ -8,23 +8,25 @@ export class FirstAndLastNameValidator {
    * @returns {string} [return.error] - The error message if validation fails.
    */
   validateFirstAndLastName(firstName, lastName) {
-    if (!firstName || !lastName) {
-      return { isValid: false, error: "First name and last name are required." }
-    }
 
     const nameRegex = /^[A-Za-zåäöÅÄÖ]+$/ // Only letters allowed
-    const minLength = 1 // Minimum length of the name
-    const maxLength = 50 // Maximum length of the name
+    const maxLength = 80 // Maximum length of the name
 
-    if (!firstName || firstName.length < minLength || firstName.length > maxLength) {
-      return { isValid: false, error: "First name must be between 1 and 50 characters." }
+    if (!firstName) {
+      return { isValid: false, error: "First name is required." }
+    }
+    if (firstName.length > maxLength) {
+      return { isValid: false, error: "First name must not be longer than 80 characters." }
     }
     if (!nameRegex.test(firstName)) {
       return { isValid: false, error: "First name can only contain letters." }
     }
 
-    if (!lastName || lastName.length < minLength || lastName.length > maxLength) {
-      return { isValid: false, error: "Last name must be between 1 and 50 characters." }
+    if (!lastName) {
+      return { isValid: false, error: "Last name is required." }
+    }
+    if (lastName.length > maxLength) {
+      return { isValid: false, error: "Last name must not be longer than 80 characters." }
     }
     if (!nameRegex.test(lastName)) {
       return { isValid: false, error: "Last name can only contain letters." }

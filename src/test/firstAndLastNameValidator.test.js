@@ -24,9 +24,33 @@ describe("FirstAndLastNameValidator Tests", () => {
   /**
    * Tests if an empty first name returns an error.
    */
-  test("returns error for first name too short", async () => {
+  test("returns error for missing first name", async () => {
     const result = await nameValidator.validateFirstAndLastName("", "Svensson")
-    expect(result).toEqual({ isValid: false, error: "First name must be between 1 and 50 characters." })
+    expect(result).toEqual({ isValid: false, error: "First name is required." })
+  })
+
+  /**
+   * Tests if an empty last name returns an error.
+   */
+  test("returns error for missing last name", async () => {
+    const result = await nameValidator.validateFirstAndLastName("Anna", "")
+    expect(result).toEqual({ isValid: false, error: "Last name is required." })
+  })
+
+  /**
+   * Tests if a first name that is too long returns an error.
+   */
+  test("returns error for first name too long", async () => {
+    const result = await nameValidator.validateFirstAndLastName("A".repeat(81), "Svensson")
+    expect(result).toEqual({ isValid: false, error: "First name must not be longer than 80 characters." })
+  })
+
+  /**
+   * Tests if a last name that is too long returns an error.
+   */
+  test("returns error for last name too long", async () => {
+    const result = await nameValidator.validateFirstAndLastName("Anna", "Svensson".repeat(81))
+    expect(result).toEqual({ isValid: false, error: "Last name must not be longer than 80 characters." })
   })
 
   /**
@@ -35,13 +59,5 @@ describe("FirstAndLastNameValidator Tests", () => {
   test("returns error for last name containing numbers", async () => {
     const result = await nameValidator.validateFirstAndLastName("Anna", "Svensson123")
     expect(result).toEqual({ isValid: false, error: "Last name can only contain letters." })
-  })
-
-  /**
-   * Tests if a first name exceeding the maximum length returns an error.
-   */
-  test("returns error for names exceeding max length", async () => {
-    const result = await nameValidator.validateFirstAndLastName("A".repeat(51), "Svensson")
-    expect(result).toEqual({ isValid: false, error: "First name must be between 1 and 50 characters." })
   })
 })
