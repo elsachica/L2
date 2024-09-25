@@ -10,12 +10,13 @@
  */
 
 export { EmailValidator } from "./validators/emailValidator.js"
-export { PostalCodeValidator } from "./validators/address/postalCodeValidator.js"
 export { PhoneNumberValidator } from "./validators/phoneNumberValidator.js"
 export { PasswordValidator } from "./validators/passwordValidator.js"
 export { UserNameValidator } from "./validators/userNameValidator.js"
 export { FirstAndLastNameValidator } from "./validators/firstAndLastNameValidator.js"
 
+// date
 export { DateFormatValidator, AgeValidator } from "./validators/date/index.js"
 
-// totalt 183 rader kod
+// address
+export { PostalCodeValidator, StreetValidator, CityValidator, AddressValidator } from "./validators/address/index.js"
