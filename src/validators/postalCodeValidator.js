@@ -15,10 +15,10 @@ export class PostalCodeValidator {
       return { isValid: false, error: "Postal code is required." }
     }
 
-    const usPostalCodeRegex = /^\d{5}(-\d{4})?$/
-    const swePostalCodeRegex = /^\d{3} \d{2}$/
-    const canPostalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/
-    const ukPostalCodeRegex = /^[A-Za-z]{1,2}\d{1,2}[A-Za-z]?\s?\d[A-Za-z]{2}$/
+    const usPostalCodeRegex = /^\d{5}(-\d{4})?$/ // US postal code format: 12345 or 12345-6789
+    const swePostalCodeRegex = /^\d{3} \d{2}$/ // Sweden postal code format: 123 45
+    const canPostalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/ // Canada postal code format: A1A 1A1 or A1A1A1
+    const ukPostalCodeRegex = /^[A-Za-z]{1,2}\d{1,2}[A-Za-z]?\s?\d[A-Za-z]{2}$/ // UK postal code format: A1 1AA or A11AA
 
     if (usPostalCodeRegex.test(postalCode)) {
       return { isValid: true, country: "USA" }
