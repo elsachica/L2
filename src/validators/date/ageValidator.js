@@ -1,6 +1,9 @@
-// src/AgeValidator.js
 import { DateFormatValidator } from "./dateFormatValidator.js"
 
+/**
+ * Class representing an age validator.
+ * @extends DateFormatValidator
+ */
 export class AgeValidator extends DateFormatValidator {
   /**
    * Validates the age based on a date format.
