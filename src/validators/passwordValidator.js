@@ -15,12 +15,12 @@ export class PasswordValidator {
       return { isValid: false, error: "Password is required." }
     }
 
-    const lengthRegex = /^.{6,16}$/
-    const digitRegex = /[0-9]/
-    const specialCharRegex = /[!@#$%^&*]/
-    const upperCaseRegex = /[A-Z]/
-    const lowerCaseRegex = /[a-z]/
-    const noSpaceRegex = /^\S*$/
+    const lengthRegex = /^.{6,16}$/ // Forbidden to be shorter than 6 characters and longer than 16 characters
+    const digitRegex = /[0-9]/ // Must include at least one digit
+    const specialCharRegex = /[!@#$%^&*]/ // Must include at least one special character !@#$%^&*
+    const upperCaseRegex = /[A-Z]/ // Must include at least one uppercase letter
+    const lowerCaseRegex = /[a-z]/ // Must include at least one lowercase letter
+    const noSpaceRegex = /^\S*$/ // Forbidden to contain spaces
 
     if (!lengthRegex.test(password)) {
       return { isValid: false, message: "Password must be between 6 and 16 characters long." }
