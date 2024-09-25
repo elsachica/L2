@@ -35,3 +35,5 @@ export class FirstAndLastNameValidator {
     return { isValid: true }
   }
 }
+
+// rader kod 20

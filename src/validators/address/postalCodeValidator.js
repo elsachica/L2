@@ -33,3 +33,5 @@ export class PostalCodeValidator {
     }
   }
 }
+
+// rader kod 23

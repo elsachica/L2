@@ -38,3 +38,5 @@ export class AgeValidator extends DateFormatValidator {
     return { isValid: true, message: "Age is valid." }
   }
 }
+
+// 24 rader av kod

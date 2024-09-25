@@ -40,3 +40,4 @@ export class EmailValidator {
   }
 }
 
+// rader kod 26
