@@ -44,5 +44,3 @@ export class PasswordValidator {
     return { isValid: true }
   }
 }
-
-// rader kod 27

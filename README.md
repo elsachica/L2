@@ -21,14 +21,13 @@ The module can be used to validate user data in other applications.
 
 To download and install the project:
 
-1. Clone the repository:
+1. Clone the repository and add the modules in your own project:
     ```bash
     git clone https://github.com/elsachica/L2.git
     ```
 
 2. Navigate to the project folder and install the necessary dependencies:
     ```bash
-    cd L2
     npm install
     ```
 
@@ -42,8 +41,8 @@ import { EmailValidator, PasswordValidator } from './path-to-your-module/index.j
 const emailValidator = new EmailValidator()
 const passwordValidator = new PasswordValidator()
 
-console.log(emailValidator.validate('example@gmail.com'))  // { isValid: true, error: null }
-console.log(passwordValidator.validate('P@ssw0rd'))        // { isValid: true }
+console.log(emailValidator.validateEmail('example@gmail.com'))  // { isValid: true, error: null }
+console.log(passwordValidator.validatePassword('P@ssw0rd'))        // { isValid: true }
 ```
 
 

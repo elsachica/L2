@@ -21,7 +21,6 @@ export class FirstAndLastNameValidator {
     if (!nameRegex.test(firstName)) {
       return { isValid: false, error: "First name can only contain letters." }
     }
-
     if (!lastName) {
       return { isValid: false, error: "Last name is required." }
     }
@@ -35,5 +34,3 @@ export class FirstAndLastNameValidator {
     return { isValid: true }
   }
 }
-
-// rader kod 20

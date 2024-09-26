@@ -33,5 +33,3 @@ export class PhoneNumberValidator {
     }
   }
 }
-
-// rader kod 23

@@ -28,5 +28,3 @@ export class DateFormatValidator {
     }
   }
 }
-
-// rader kod 17
