@@ -41,7 +41,7 @@ import { EmailValidator, PasswordValidator } from './path-to-your-module/index.j
 const emailValidator = new EmailValidator()
 const passwordValidator = new PasswordValidator()
 
-console.log(emailValidator.validateEmail('example@gmail.com'))  // { isValid: true, error: null }
+console.log(emailValidator.validateEmail('example@gmail.com'))     // { isValid: true, error: null }
 console.log(passwordValidator.validatePassword('P@ssw0rd'))        // { isValid: true }
 ```
 
