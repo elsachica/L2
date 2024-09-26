@@ -2,8 +2,20 @@
 # Validation Module
 
 ## Description
+This project is a JavaScript module that contains various validators for checking the format of:
+- first and last names
+- email addresses
+- postal codes
+- phone numbers
+- passwords
+- user names
+- date formats
+- ages
+- street names
+- cities
+- complete addresses.
 
-This project is a JavaScript module that contains various validators for checking the format of email addresses, postal codes, phone numbers, passwords, user names, and date formats. The module can be used to validate user data in other applications.
+The module can be used to validate user data in other applications.
 
 ## Installation
 
@@ -25,20 +37,18 @@ To download and install the project:
 Once the module is installed, you can import and use the validation classes. Example:
 
 ```javascript
-import { EmailValidator, PostalCodeValidator, PasswordValidator } from './path-to-your-module/index.js';
+import { EmailValidator, PasswordValidator } from './path-to-your-module/index.js'
 
-const emailValidator = new EmailValidator();
-const passwordValidator = new PasswordValidator();
+const emailValidator = new EmailValidator()
+const passwordValidator = new PasswordValidator()
 
-console.log(emailValidator.validate('example@gmail.com'));  // { isValid: true, error: null }
-console.log(passwordValidator.validate('P@ssw0rd'));        // { isValid: true }
+console.log(emailValidator.validate('example@gmail.com'))  // { isValid: true, error: null }
+console.log(passwordValidator.validate('P@ssw0rd'))        // { isValid: true }
 ```
 
 
 
-##
-
- Modules
+## Modules
 
 The project includes five main classes, each for a specific type of validation:
 
@@ -46,8 +56,13 @@ The project includes five main classes, each for a specific type of validation:
 - **PostalCodeValidator**: Handles validation for both Swedish and US postal code formats.
 - **PhoneNumberValidator**: Validates both Swedish and US phone numbers.
 - **PasswordValidator**: Checks that passwords meet length, character, number, and special character requirements.
-- **DateFormatValidator**: Validates two date formats: YYYY-MM-DD and DD/MM/YYYY.
+- **DateFormatValidator**: Validates two date formats: `YYYY-MM-DD` and `DD/MM/YYYY`.
 - **UserNameValidator**: Validates usernames to ensure they are 3 to 16 characters long and contain only letters, numbers, and underscores.
+- **AddressValidator**: Validates a complete address by checking the street, city, and postal code.
+- **StreetValidator**: Validates street names to ensure they only contain letters, numbers, and spaces.
+- **CityValidator**: Validates city names to ensure they only contain letters and spaces.
+- **FirstAndLastNameValidator**: Validates first and last names, ensuring they only contain letters and do not exceed a certain length.
+- **AgeValidator**: Validates ages to ensure they are within the range of 3 to 120 years.
 
 ## Test Cases
 
@@ -59,8 +74,13 @@ Examples of test cases:
 - **PostalCodeValidator**: Verifies that both US and Swedish postal codes are validated correctly.
 - **PhoneNumberValidator**: Tests phone numbers for both Swedish and US formats.
 - **PasswordValidator**: Ensures that passwords meet the required length and character rules.
-- **DateFormatValidator**: Tests if the date formats YYYY-MM-DD and DD/MM/YYYY are valid.
+- **DateFormatValidator**: Tests if the date formats `YYYY-MM-DD` and `DD/MM/YYYY` are valid.
 - **UserNameValidator**: Ensures that usernames are 3 to 16 characters long and contain only letters, numbers, and underscores.
+- **AddressValidator**: Tests that a complete address format is valid.
+- **StreetValidator**: Tests that a street name is valid.
+- **CityValidator**: Tests that a city name is valid.
+- **FirstAndLastNameValidator**: Ensures that first and last names are valid.
+- **AgeValidator**: Ensures that ages are valid.
 
 
 To run the tests, use the command:
