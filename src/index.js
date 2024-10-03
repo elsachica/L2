@@ -3,20 +3,26 @@
  * @description This file exports various validator classes from their respective modules.
  * These validators include:
  * - EmailValidator: Validates email addresses.
- * - PostalCodeValidator: Validates postal codes.
  * - PhoneNumberValidator: Validates phone numbers.
  * - PasswordValidator: Validates passwords.
- * - DateFormatValidator and AgeValidator: Validates date formats and age.
+ * - UserNameValidator: Validates usernames.
+ * - FirstAndLastNameValidator: Validates first and last names.
+ * - DateFormatValidator: Validates date formats.
+ * - AgeValidator: Validates age based on date formats.
+ * - PostalCodeValidator: Validates postal codes.
+ * - StreetValidator: Validates street names.
+ * - CityValidator: Validates city names.
+ * - AddressValidator: Validates complete addresses.
  */
 
-export { EmailValidator } from "./validators/emailValidator.js"
-export { PhoneNumberValidator } from "./validators/phoneNumberValidator.js"
-export { PasswordValidator } from "./validators/passwordValidator.js"
-export { UserNameValidator } from "./validators/userNameValidator.js"
-export { FirstAndLastNameValidator } from "./validators/firstAndLastNameValidator.js"
+export { EmailValidator } from "./validators/email/index.js"
+export { PhoneNumberValidator } from "./validators/phoneNumber/index.js"
+export { PasswordValidator } from "./validators/password/index.js"
+export { UserNameValidator } from "./validators/userName/index.js"
+export { FirstAndLastNameValidator } from "./validators/firstAndLastName/index.js"
 
 // date
-export { DateFormatValidator, AgeValidator } from "./validators/date/index.js"
+export { DateFormatValidator, AgeValidator } from "./validators/age/index.js"
 
 // address
 export { PostalCodeValidator, StreetValidator, CityValidator, AddressValidator } from "./validators/address/index.js"
