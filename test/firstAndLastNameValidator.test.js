@@ -1,4 +1,4 @@
-import { FirstAndLastNameValidator } from "../validators/firstAndLastNameValidator.js"
+import { FirstAndLastNameValidator } from "../src/validators/firstAndLastName/index.js"
 
 /**
  * Tests for the FirstAndLastNameValidator class.

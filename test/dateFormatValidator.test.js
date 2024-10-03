@@ -1,4 +1,4 @@
-import { DateFormatValidator } from "../validators/date/dateFormatValidator"
+import { DateFormatValidator } from "../src/validators/age/index.js"
 
 /**
  * Tests for the DateFormatValidator class.

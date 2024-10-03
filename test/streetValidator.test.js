@@ -1,4 +1,4 @@
-import { StreetValidator } from "../validators/address/streetValidator.js"
+import { StreetValidator } from "../src/validators/address/index.js"
 
 /**
  * Tests for the StreetValidator class.

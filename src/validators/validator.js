@@ -1,5 +1,5 @@
 /**
- * @file index.js
+ * @file validator.js
  * @description This file exports various validator classes from their respective modules.
  * These validators include:
  * - EmailValidator: Validates email addresses.
@@ -15,14 +15,14 @@
  * - AddressValidator: Validates complete addresses.
  */
 
-export { EmailValidator } from "./validators/email/index.js"
-export { PhoneNumberValidator } from "./validators/phoneNumber/index.js"
-export { PasswordValidator } from "./validators/password/index.js"
-export { UserNameValidator } from "./validators/userName/index.js"
-export { FirstAndLastNameValidator } from "./validators/firstAndLastName/index.js"
+export { EmailValidator } from "./email/index.js"
+export { PhoneNumberValidator } from "./phoneNumber/index.js"
+export { PasswordValidator } from "./password/index.js"
+export { UserNameValidator } from "./userName/index.js"
+export { FirstAndLastNameValidator } from "./firstAndLastName/index.js"
 
 // date
-export { DateFormatValidator, AgeValidator } from "./validators/age/index.js"
+export { DateFormatValidator, AgeValidator } from "./age/index.js"
 
 // address
-export { PostalCodeValidator, StreetValidator, CityValidator, AddressValidator } from "./validators/address/index.js"
+export { PostalCodeValidator, StreetValidator, CityValidator, AddressValidator } from "./address/index.js"

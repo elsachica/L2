@@ -1,4 +1,4 @@
-import { CityValidator } from "../validators/address/cityValidator.js"
+import { CityValidator } from "../src/validators/address/index.js"
 
 /**
  * Tests for the CityValidator class.

@@ -1,4 +1,4 @@
-import { PhoneNumberValidator } from "../validators/phoneNumberValidator.js"
+import { PhoneNumberValidator } from "../src/validators/phoneNumber/index.js"
 
 /**
  * Tests for the PhoneNumberValidator class.

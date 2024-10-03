@@ -1,4 +1,4 @@
-import { AddressValidator } from "../validators/address/addressValidator.js"
+import { AddressValidator } from "../src/validators/address/index.js"
 
 /**
  * Tests for the AddressValidator class.

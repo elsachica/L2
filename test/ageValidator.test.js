@@ -1,4 +1,4 @@
-import { AgeValidator } from "../validators/date/ageValidator.js"
+import { AgeValidator } from "../src/validators/age/index.js"
 
 /**
  * Tests for the AgeValidator class.
